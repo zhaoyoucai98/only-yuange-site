@@ -1,0 +1,222 @@
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121c;
+  --bg-tertiary: #1a1a2e;
+  --bg-card: rgba(26, 26, 46, 0.85);
+  --accent-primary: #c7a454;
+  --accent-secondary: #e8d5a3;
+  --accent-gold: #d4af37;
+  --accent-cyan: #00d4ff;
+  --accent-purple: #9d4edd;
+  --accent-mystery: #6b21a8;
+  --accent-mystery-light: #a855f7;
+  --text-primary: #f0f0f5;
+  --text-secondary: #b0b0c0;
+  --text-muted: #6b6b80;
+  --border-color: rgba(199, 164, 84, 0.2);
+  --border-glow: rgba(199, 164, 84, 0.5);
+  --shadow-gold: 0 0 30px rgba(199, 164, 84, 0.15);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-mystery: 0 0 40px rgba(168, 85, 247, 0.15);
+  --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: relative;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(168, 85, 247, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 30%, rgba(199, 164, 84, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(107, 33, 168, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0f 0%, #0d0d18 50%, #0a0a0f 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('../诡秘之主.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  filter: blur(0.5px) saturate(1.1) contrast(1.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(168, 85, 247, 0.06) 0%, transparent 30%),
+    radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.05) 0%, transparent 30%);
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#app {
+  position: relative;
+  z-index: 2;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-gold), var(--accent-mystery-light));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-secondary), var(--accent-gold));
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-gold) 50%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mystery-gradient-text {
+  background: linear-gradient(135deg, var(--accent-mystery-light) 0%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-gold), transparent, var(--accent-mystery-light));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.mystery-pattern-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mystery-pattern-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../诡秘之主.png');
+  background-size: 220px;
+  background-repeat: repeat;
+  opacity: 0.15;
+  filter: grayscale(0.2) contrast(1.1);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-mystery-decoration {
+  position: relative;
+}
+
+.section-mystery-decoration::before,
+.section-mystery-decoration::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-mystery-decoration::before {
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+}
+
+.section-mystery-decoration::after {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(199, 164, 84, 0.06) 0%, transparent 70%);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  body::before {
+    opacity: 0.025;
+    filter: blur(3px);
+  }
+
+  .section-mystery-decoration::before,
+  .section-mystery-decoration::after {
+    width: 200px;
+    height: 200px;
+  }
+}
