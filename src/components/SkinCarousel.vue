@@ -164,8 +164,9 @@ onUnmounted(() => {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
   width: 100%;
+  height: auto;
+  min-height: 0;
 }
 
 .carousel-container {
@@ -174,7 +175,8 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 0;
 }
 
 .carousel-section::before {
@@ -228,9 +230,9 @@ onUnmounted(() => {
 
 .carousel-wrapper {
   position: relative;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 
 .carousel-main {
