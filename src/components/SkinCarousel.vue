@@ -80,9 +80,9 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { Picture, ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
 
-import skinRC from '@/R-C.png'
+import skinRC from '@/原皮.png'
 import skinYunJian from '@/云间偶戏.webp'
-import skinOuXiang from '@/偶像歌剧院.webp'
+import skinOuXiang from '@/午夜歌剧院.webp'
 import skinWuXin from '@/无心.webp'
 import skinGuiMi from '@/诡秘之主.png'
 
