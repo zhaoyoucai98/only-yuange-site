@@ -16,7 +16,7 @@ export default defineConfig({
     open: false
   },
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
     assetsDir: 'assets',
     sourcemap: false,
     chunkSizeWarningLimit: 1500
