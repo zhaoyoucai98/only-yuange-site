@@ -87,9 +87,9 @@ import skinWuXin from '@/无心.webp'
 import skinGuiMi from '@/诡秘之主.png'
 
 const skins = [
-  { name: '午夜歌剧院', type: '史诗', class: 'epic', src: skinRC },
+  { name: '原皮', type: '基础', class: 'basic', src: skinRC },
+  { name: '午夜歌剧院', type: '伴生', class: 'companion', src: skinOuXiang },
   { name: '云间偶戏', type: '战令限定', class: 'limited', src: skinYunJian },
-  { name: '偶像歌剧院', type: '传说', class: 'legend', src: skinOuXiang },
   { name: '无心', type: '史诗', class: 'epic', src: skinWuXin },
   { name: '诡秘之主', type: '联动限定', class: 'special', src: skinGuiMi }
 ]
@@ -304,6 +304,16 @@ onUnmounted(() => {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
+
+  &.basic {
+    background: linear-gradient(135deg, #868e96, #495057);
+    color: #fff;
+  }
+
+  &.companion {
+    background: linear-gradient(135deg, #339af0, #1c7ed6);
+    color: #fff;
+  }
 
   &.legend {
     background: linear-gradient(135deg, #d4af37, #c7a454);
